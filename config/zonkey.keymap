@@ -188,6 +188,14 @@
 
             tap-ms = <20>;
         };
+
+        new_scroll_up_down: behavior {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -202,19 +210,19 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>,
+                <&new_scroll_up_down>,
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         layer_1 {
             bindings = <
-&kp ESC         &trans        &kp UP        &trans            &trans                                          &kp LEFT_PARENTHESIS  &kp RPAR   &moA    &moB  &moC
-&kp TAB         &kp LEFT      &kp DOWN      &kp RIGHT         &trans       &kp K_MUTE            &trans       &trans                &trans     &trans  &moD  &moE
-&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA           &trans     &moF    &moG  &moH
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE         &kp ENTER                      &moI
+&kp ESC         &trans        &kp UP        &trans            &trans                                          &kp LPAR       &kp RPAR   &moA    &moB  &moC
+&kp TAB         &kp LEFT      &kp DOWN      &kp RIGHT         &trans       &kp K_MUTE            &trans       &kp LPAR       &kp RPAR   &trans  &moD  &moE
+&kp LEFT_SHIFT  &trans        &trans        &trans            &trans       &trans                &kp JP_EISU  &kp JP_KANA    &trans     &moF    &moG  &moH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_HENKAN  &lt 4 SPACE  &lt 1 INT_MUHENKAN                 &kp BACKSPACE  &kp ENTER                      &moI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         layer_2 {
