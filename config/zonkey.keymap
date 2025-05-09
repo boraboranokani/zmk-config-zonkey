@@ -225,10 +225,10 @@
 
         layer_1 {
             bindings = <
-&kp ESC         &none                 &kp UP        &none               &none                                   &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &moA              &moB  &moC
-&kp TAB         &kp LEFT              &kp DOWN      &kp RIGHT           &none        &kp K_MUTE          &none  &none             &none             &kp LS(NUMBER_2)  &moD  &moE
-&kp LEFT_SHIFT  &kp LA(SINGLE_QUOTE)  &none         &none               &none        &none               &none  &none             &none             &moF              &moG  &moH
-&kp LCTRL       &kp LEFT_WIN          &kp LEFT_ALT  &lt 5 INT_MUHENKAN  &lt 4 SPACE  &lt 1 INT_HENKAN           &kp BACKSPACE     &kp ENTER                                       &moI
+&kp ESC         &none         &kp UP        &none               &none                                   &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &moA              &moB  &moC
+&kp TAB         &kp LEFT      &kp DOWN      &kp RIGHT           &none        &kp K_MUTE          &none  &none             &none             &kp LS(NUMBER_2)  &moD  &moE
+&kp LEFT_SHIFT  &none         &none         &none               &none        &none               &none  &none             &none             &moF              &moG  &moH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_MUHENKAN  &lt 4 SPACE  &lt 1 INT_HENKAN           &kp BACKSPACE     &kp ENTER                                       &moI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
