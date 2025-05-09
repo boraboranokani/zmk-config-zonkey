@@ -196,6 +196,15 @@
 
             tap-ms = <20>;
         };
+
+        hankakuzennkaku: hankakuzennkaku {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>;
+            label = "HANKAKUZENNKAKU";
+            keep-mods = <(MOD_LALT)>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
@@ -216,10 +225,10 @@
 
         layer_1 {
             bindings = <
-&kp ESC         &none                    &kp UP        &none               &none                                   &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &moA              &moB  &moC
-&kp TAB         &kp LEFT                 &kp DOWN      &kp RIGHT           &none        &kp K_MUTE          &none  &none             &none             &kp LS(NUMBER_2)  &moD  &moE
-&kp LEFT_SHIFT  &kp LANG_ZENKAKUHANKAKU  &none         &none               &none        &none               &none  &none             &none             &moF              &moG  &moH
-&kp LCTRL       &kp LEFT_WIN             &kp LEFT_ALT  &lt 5 INT_MUHENKAN  &lt 4 SPACE  &lt 1 INT_HENKAN           &kp BACKSPACE     &kp ENTER                                       &moI
+&kp ESC         &hankakuzennkaku      &kp UP        &none               &none                                   &kp LS(NUMBER_8)  &kp LS(NUMBER_9)  &moA              &moB  &moC
+&kp TAB         &kp LEFT              &kp DOWN      &kp RIGHT           &none        &kp K_MUTE          &none  &none             &none             &kp LS(NUMBER_2)  &moD  &moE
+&kp LEFT_SHIFT  &kp LA(SINGLE_QUOTE)  &none         &none               &none        &none               &none  &none             &none             &moF              &moG  &moH
+&kp LCTRL       &kp LEFT_WIN          &kp LEFT_ALT  &lt 5 INT_MUHENKAN  &lt 4 SPACE  &lt 1 INT_HENKAN           &kp BACKSPACE     &kp ENTER                                       &moI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -227,10 +236,10 @@
 
         layer_2 {
             bindings = <
-&kp N1          &mo2    &kp N3  &kp N4              &kp N5                                  &mo6   &mo7   &mo8       &mo9       &mo0
-&kp N4          &kp N5  &mo6    &none               &none        &kp LS(LG(S))       &none  &none  &none  &none      &none      &none
-&kp LEFT_SHIFT  &mo7    &mo8    &mo9                &mo0         &none               &none  &none  &none  &mkp LCLK  &mkp RCLK  &none
-&none           &none   &none   &lt 6 INT_MUHENKAN  &lt 2 SPACE  &lt 4 INT_HENKAN           &none  &none                               &none
+&kp N1          &mo2    &kp N3  &kp N4              &kp N5                                  &mo6           &mo7       &mo8       &mo9       &mo0
+&kp N4          &kp N5  &mo6    &none               &none        &kp LS(LG(S))       &none  &none          &none      &none      &none      &none
+&kp LEFT_SHIFT  &mo7    &mo8    &mo9                &mo0         &none               &none  &none          &none      &mkp LCLK  &mkp RCLK  &none
+&none           &none   &none   &lt 6 INT_MUHENKAN  &lt 2 SPACE  &lt 4 INT_HENKAN           &kp BACKSPACE  &kp ENTER                               &none
             >;
 
             sensor-bindings = <&new_scroll_up_down>;
@@ -271,10 +280,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                    &trans  &trans    &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3   &mkp MB2   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &mkp LCLK  &mkp RCLK  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans                                  &trans
+&trans  &trans  &trans  &trans  &trans                    &trans         &trans     &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans         &mkp MB1   &mkp MB3   &mkp MB2   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans         &trans     &mkp LCLK  &mkp RCLK  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &kp BACKSPACE  &kp ENTER                                &trans
             >;
 
             sensor-bindings = <&new_scroll_up_down>;
