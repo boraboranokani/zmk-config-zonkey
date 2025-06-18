@@ -196,6 +196,15 @@
 
             tap-ms = <20>;
         };
+
+        moL: moL {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LBRC>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
     };
 
     keymap {
@@ -216,10 +225,10 @@
 
         layer_1 {
             bindings = <
-&kp ESC         &none         &kp UP        &none               &kp LC(C)                                                &kp LS(NUMBER_8)    &kp LS(NUMBER_9)     &moA              &moB  &moC
-&kp TAB         &kp LEFT      &kp DOWN      &kp RIGHT           &kp LC(V)    &kp C_MUTE              &kp LS(LEFT_ARROW)  &kp LS(UP_ARROW)    &none                &kp LS(NUMBER_2)  &moD  &moE
-&kp LEFT_SHIFT  &kp LA(LBKT)  &none         &none               &none        &kp LA(SINGLE_QUOTE)    &none               &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)  &moF              &moG  &moH
-&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_MUHENKAN  &lt 4 SPACE  &lt 1 INT_HENKAN                            &kp BACKSPACE       &kp ENTER                                          &moI
+&kp ESC         &none         &kp UP        &none               &kp LC(C)                                            &kp LS(NUMBER_8)    &kp LS(NUMBER_9)     &moA              &moB  &moC
+&kp TAB         &kp LEFT      &kp DOWN      &kp RIGHT           &kp LC(V)    &kp C_MUTE          &kp LS(LEFT_ARROW)  &kp LS(UP_ARROW)    &none                &kp LS(NUMBER_2)  &moD  &moE
+&kp LEFT_SHIFT  &kp LA(LBKT)  &none         &none               &none        &moL                &none               &kp LS(DOWN_ARROW)  &kp LS(RIGHT_ARROW)  &moF              &moG  &moH
+&kp LCTRL       &kp LEFT_WIN  &kp LEFT_ALT  &lt 5 INT_MUHENKAN  &lt 4 SPACE  &lt 1 INT_HENKAN                        &kp BACKSPACE       &kp ENTER                                          &moI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
