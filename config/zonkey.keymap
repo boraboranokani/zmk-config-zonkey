@@ -200,10 +200,9 @@
         moL: moL {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp LBKT>, <&kp LBRC>;
+            bindings = <&kp LA(LBKT)>, <&kp LBRC>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LALT)>;
         };
     };
 
